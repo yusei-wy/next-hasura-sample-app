@@ -1,0 +1,6 @@
+yarn add -D \
+    typescript @types/node @types/react @types/react-dom \
+    eslint eslint-config-prettier eslint-plugin-jest \
+    eslint-plugin-prettier eslint-plugin-react prettier \
+    @typescript-eslint/eslint-plugin @typescript-eslint/parser \
+    eslint-plugin-react-hooks
