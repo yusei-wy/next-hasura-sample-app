@@ -6,8 +6,12 @@ import { useGetArticleQuery } from '@/generated/graphql';
 
 import styles from './index.module.css';
 import { Article } from '@/components/article';
+import { formatDate } from '@/utils/date';
+import { useDIContext } from '@/context';
 
 const ArticlePage: NextPage = () => {
+    const services = useDIContext((services) => services);
+
     const router = useRouter();
     const { articleID } = router.query;
 
@@ -31,6 +35,10 @@ const ArticlePage: NextPage = () => {
     if (!publishedAt) {
         return <Error statusCode={404} />;
     }
+    const { datetime, isNew } = formatDate(
+        services.datetimeService.getNowByString(publishedAt),
+        services.datetimeService.getNow(),
+    );
 
     return (
         <div className={styles.contentContainer}>
@@ -44,7 +52,12 @@ const ArticlePage: NextPage = () => {
                         {user.displayName} @{user.displayID}
                     </div>
                     <span className={styles.publishedAt}>
-                        {new Date(publishedAt).toLocaleString()} ☆投稿すぐ
+                        <span>{datetime}</span>
+                        {isNew ? (
+                            <span className={styles.newContent}>New</span>
+                        ) : (
+                            ''
+                        )}
                     </span>
                 </div>
             </div>

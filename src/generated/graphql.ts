@@ -9,7 +9,7 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  timestamp: any;
+  timestamp: string;
   timestamptz: string;
   uuid: string;
 };

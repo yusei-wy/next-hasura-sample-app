@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "start-hasura": "sudo docker-compose up && yarn hasura console --project hasura"
+    "start-hasura": "sudo docker-compose up && yarn hasura console --project hasura",
+    "test": "jest"
   },
   "dependencies": {
     "@apollo/client": "^3.2.2",
@@ -15,7 +16,8 @@
     "minireset.css": "^0.0.6",
     "next": "9.5.3",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.17.10",
