@@ -8,7 +8,7 @@ const PostPage: NextPage = () => {
             <input
                 className={styles.subject}
                 type="text"
-                placeholder="タ　イ　ト　ル"
+                placeholder="タ イ ト ル"
             />
             <textarea
                 className={styles.editor}
