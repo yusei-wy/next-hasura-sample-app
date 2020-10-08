@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+}
+
+.left {
+    margin: 2rem auto 2rem 3rem;
+}
+
+.right {
+    margin: 2rem 3rem 2rem auto;
+}
+
+.userIcon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+}

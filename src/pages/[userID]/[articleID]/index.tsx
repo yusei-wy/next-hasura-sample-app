@@ -6,6 +6,7 @@ import { useGetArticleQuery } from '@/generated/graphql';
 
 import styles from './index.module.css';
 import { Article } from '@/components/article';
+import { SiteHeader } from '@/components/site-header';
 import { formatDate } from '@/utils/date';
 import { useDIContext } from '@/context';
 
@@ -41,30 +42,33 @@ const ArticlePage: NextPage = () => {
     );
 
     return (
-        <div className={styles.contentContainer}>
-            <h1 className={styles.subject}>{subject}</h1>
-            <div className={styles.userContainer}>
-                <div>
-                    <img className={styles.userIcon} src="/profile.png" />
-                </div>
-                <div className={styles.userText}>
-                    <div className={styles.userID}>
-                        {user.displayName} @{user.displayID}
+        <>
+            <SiteHeader />
+            <div className={styles.contentContainer}>
+                <h1 className={styles.subject}>{subject}</h1>
+                <div className={styles.userContainer}>
+                    <div>
+                        <img className={styles.userIcon} src="/profile.png" />
                     </div>
-                    <span className={styles.publishedAt}>
-                        <span>{datetime}</span>
-                        {isNew ? (
-                            <span className={styles.newContent}>New</span>
-                        ) : (
-                            ''
-                        )}
-                    </span>
+                    <div className={styles.userText}>
+                        <div className={styles.userID}>
+                            {user.displayName} @{user.displayID}
+                        </div>
+                        <span className={styles.publishedAt}>
+                            <span>{datetime}</span>
+                            {isNew ? (
+                                <span className={styles.newContent}>New</span>
+                            ) : (
+                                ''
+                            )}
+                        </span>
+                    </div>
+                </div>
+                <div className={styles.content}>
+                    <Article content={content} />
                 </div>
             </div>
-            <div className={styles.content}>
-                <Article content={content} />
-            </div>
-        </div>
+        </>
     );
 };
 
