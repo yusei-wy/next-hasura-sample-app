@@ -40,7 +40,7 @@ export type Articles = {
   content: Scalars['String'];
   createdAt: Scalars['timestamptz'];
   id: Scalars['uuid'];
-  publishedAt?: Maybe<Scalars['timestamp']>;
+  publishedAt?: Maybe<Scalars['timestamptz']>;
   subject: Scalars['String'];
   updatedAt: Scalars['timestamptz'];
   /** An object relationship */
@@ -91,7 +91,7 @@ export type Articles_Bool_Exp = {
   content?: Maybe<String_Comparison_Exp>;
   createdAt?: Maybe<Timestamptz_Comparison_Exp>;
   id?: Maybe<Uuid_Comparison_Exp>;
-  publishedAt?: Maybe<Timestamp_Comparison_Exp>;
+  publishedAt?: Maybe<Timestamptz_Comparison_Exp>;
   subject?: Maybe<String_Comparison_Exp>;
   updatedAt?: Maybe<Timestamptz_Comparison_Exp>;
   user?: Maybe<Users_Bool_Exp>;
@@ -109,7 +109,7 @@ export type Articles_Insert_Input = {
   content?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
-  publishedAt?: Maybe<Scalars['timestamp']>;
+  publishedAt?: Maybe<Scalars['timestamptz']>;
   subject?: Maybe<Scalars['String']>;
   updatedAt?: Maybe<Scalars['timestamptz']>;
   user?: Maybe<Users_Obj_Rel_Insert_Input>;
@@ -122,7 +122,7 @@ export type Articles_Max_Fields = {
   content?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
-  publishedAt?: Maybe<Scalars['timestamp']>;
+  publishedAt?: Maybe<Scalars['timestamptz']>;
   subject?: Maybe<Scalars['String']>;
   updatedAt?: Maybe<Scalars['timestamptz']>;
 };
@@ -145,7 +145,7 @@ export type Articles_Min_Fields = {
   content?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
-  publishedAt?: Maybe<Scalars['timestamp']>;
+  publishedAt?: Maybe<Scalars['timestamptz']>;
   subject?: Maybe<Scalars['String']>;
   updatedAt?: Maybe<Scalars['timestamptz']>;
 };
@@ -224,7 +224,7 @@ export type Articles_Set_Input = {
   content?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
-  publishedAt?: Maybe<Scalars['timestamp']>;
+  publishedAt?: Maybe<Scalars['timestamptz']>;
   subject?: Maybe<Scalars['String']>;
   updatedAt?: Maybe<Scalars['timestamptz']>;
 };
