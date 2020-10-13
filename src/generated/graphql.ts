@@ -781,6 +781,22 @@ export type GetArticleQuery = (
   )> }
 );
 
+export type PostArticleMutationVariables = Exact<{
+  authorID: Scalars['uuid'];
+  content: Scalars['String'];
+  subject: Scalars['String'];
+  publishedAt?: Maybe<Scalars['timestamptz']>;
+}>;
+
+
+export type PostArticleMutation = (
+  { __typename?: 'mutation_root' }
+  & { insert_articles_one?: Maybe<(
+    { __typename?: 'articles' }
+    & Pick<Articles, 'id'>
+  )> }
+);
+
 
 export const GetArticleDocument = gql`
     query getArticle($id: uuid!) {
@@ -823,3 +839,38 @@ export function useGetArticleLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions
 export type GetArticleQueryHookResult = ReturnType<typeof useGetArticleQuery>;
 export type GetArticleLazyQueryHookResult = ReturnType<typeof useGetArticleLazyQuery>;
 export type GetArticleQueryResult = Apollo.QueryResult<GetArticleQuery, GetArticleQueryVariables>;
+export const PostArticleDocument = gql`
+    mutation PostArticle($authorID: uuid!, $content: String!, $subject: String!, $publishedAt: timestamptz) {
+  insert_articles_one(object: {authorID: $authorID, content: $content, subject: $subject, publishedAt: $publishedAt}) {
+    id
+  }
+}
+    `;
+export type PostArticleMutationFn = Apollo.MutationFunction<PostArticleMutation, PostArticleMutationVariables>;
+
+/**
+ * __usePostArticleMutation__
+ *
+ * To run a mutation, you first call `usePostArticleMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `usePostArticleMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [postArticleMutation, { data, loading, error }] = usePostArticleMutation({
+ *   variables: {
+ *      authorID: // value for 'authorID'
+ *      content: // value for 'content'
+ *      subject: // value for 'subject'
+ *      publishedAt: // value for 'publishedAt'
+ *   },
+ * });
+ */
+export function usePostArticleMutation(baseOptions?: Apollo.MutationHookOptions<PostArticleMutation, PostArticleMutationVariables>) {
+        return Apollo.useMutation<PostArticleMutation, PostArticleMutationVariables>(PostArticleDocument, baseOptions);
+      }
+export type PostArticleMutationHookResult = ReturnType<typeof usePostArticleMutation>;
+export type PostArticleMutationResult = Apollo.MutationResult<PostArticleMutation>;
+export type PostArticleMutationOptions = Apollo.BaseMutationOptions<PostArticleMutation, PostArticleMutationVariables>;
