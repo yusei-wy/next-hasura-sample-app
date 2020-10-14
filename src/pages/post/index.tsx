@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useCallback, useState } from 'react';
 
+import { UserIcon } from '@/components/user-icon';
 import { Editor } from '@/components/editor';
 import { SiteHeader, SiteHeaderItem } from '@/components/site-header';
 import { Button } from '@/components/button';
@@ -60,7 +61,7 @@ const PostPage: NextPage = () => {
                 </form>
             </SiteHeaderItem>
             <SiteHeaderItem>
-                <img className={styles.userIcon} src="/profile.png" />
+                <UserIcon src="/profile.png" />
             </SiteHeaderItem>
         </>
     );

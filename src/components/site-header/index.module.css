@@ -16,12 +16,6 @@
     align-items: center;
 }
 
-.userIcon {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 1.5rem;
-}
-
 .item + .item {
     margin-left: 1.5rem;
 }
