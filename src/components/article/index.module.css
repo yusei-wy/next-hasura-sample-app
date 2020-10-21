@@ -1,3 +1,60 @@
 .paragraph {
     margin-top: 1rem;
 }
+
+.subject {
+    mragin-top: 2rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
+}
+
+.userContainer {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.userText {
+    margin-left: 0.75rem;
+    line-height: 1.5rem;
+    font-size: 0.875rem;
+}
+
+.userName {
+    opacity: 0.5;
+}
+
+.publishedAt {
+    opacity: 0.5;
+}
+
+.newContent {
+    margin-left: 0.5rem;
+    color: #22c;
+}
+
+.icon {
+    margin-left: 0.5rem;
+}
+
+.icon + .icon {
+    margin-left: 0.25rem;
+}
+
+.articleFooter {
+    display: flex;
+    padding: 1rem 0;
+    margin: 1rem 0 0 0;
+    border-top: 1px solid #888;
+    border-bottom: 1px solid #888;
+}
+
+.userDescription {
+    font-size: 0.875rem;
+}
+
+.articleFooterContainer {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+}
